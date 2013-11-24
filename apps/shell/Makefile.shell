@@ -1,3 +1,5 @@
+
+ifneq ($(TARGET),crosso)
 shell_src = shell.c shell-reboot.c \
             shell-vars.c shell-ps.c shell-rime.c shell-sendtest.c \
             shell-blink.c shell-text.c shell-time.c \
@@ -52,3 +54,24 @@ endif
 ifeq ($(TARGET),z1)
   shell_src += shell-sky.c shell-exec.c
 endif
+
+else # ifneq($TARGET),crosso)
+shell_src = shell.c shell-reboot.c \
+            shell-ps.c \
+            shell-blink.c shell-text.c shell-time.c \
+            shell-run.c shell-coffee.c \
+            shell-checkpoint.c shell-power.c \
+            shell-udpsend.c shell-ping.c \
+            shell-base64.c \
+            shell-netperf.c shell-memdebug.c
+
+APPS += telnet
+include $(CONTIKI)/apps/telnet/Makefile.telnet
+ifndef PLATFORM_BUILD
+  override telnet_src = telnet.c
+endif
+
+
+endif
+
+

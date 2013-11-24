@@ -2,12 +2,9 @@ USB_SOURCEFILES = usb-arch.c \
 				  usb-core.c \
 				  cdc-acm.c \
 				  cdc-acm-descriptors.c \
-				  cdc-eth.c \
-				  cdc-eth-descriptors.c \
 				  descriptors.c
 
 CONTIKI_CPU_DIRS += usb \
 					usb/common \
-					usb/common/cdc-acm \
-					usb/common/cdc-eth
+					usb/common/cdc-acm
 

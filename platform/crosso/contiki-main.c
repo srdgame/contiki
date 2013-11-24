@@ -25,10 +25,6 @@
 #include "contiki-lib.h"
 #include "contiki-net.h"
 /*---------------------------------------------------------------------------*/
-#if VIZTOOL_CONF_ON
-PROCESS_NAME(viztool_process);
-#endif
-/*---------------------------------------------------------------------------*/
 #if STARTUP_CONF_VERBOSE
 #define PUTSTRING(...) putstring(__VA_ARGS__)
 #define PUTHEX(...) puthex(__VA_ARGS__)
@@ -249,10 +245,6 @@ main(void) CC_NON_BANKED
   queuebuf_init();
   process_start(&tcpip_process, NULL);
 #endif /* UIP_CONF_IPV6 */
-
-#if VIZTOOL_CONF_ON
-  process_start(&viztool_process, NULL);
-#endif
 
   energest_init();
   ENERGEST_ON(ENERGEST_TYPE_CPU);

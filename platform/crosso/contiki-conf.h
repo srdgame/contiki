@@ -284,4 +284,7 @@
 #define UIP_CONF_DS6_AADDR_NBU               1
 #endif
 
+#define HAVE_SNPRINTF
+#define snprintf(buf, len, ...) sprintf(buf, __VA_ARGS__)
+
 #endif /* __CONTIKI_CONF_H__ */

@@ -22,7 +22,6 @@ CLEAN += *.crosso
 
 ifeq ($(UIP_CONF_IPV6),1)
   CFLAGS += -DUIP_CONF_IPV6=1
-  CONTIKI_TARGET_SOURCEFILES += viztool.c
 endif
 
 FORCE:

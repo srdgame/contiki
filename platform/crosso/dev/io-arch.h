@@ -67,11 +67,6 @@
 #define io_arch_flush()
 #endif
 
-/////// DIRK:
-#include "dev/uart0.h"
-#define IO_ARCH_PREFIX uart0
-#define io_arch_flush()
-////// END DIRK
 /*---------------------------------------------------------------------------*/
 /* Expands to uart0_init(), usb_serial_init() */
 #define io_arch_init() io_arch_init_x(IO_ARCH_PREFIX)
